@@ -1,18 +1,32 @@
 {
-  "name": "futball-league",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "eslint": "8.37.0",
-    "eslint-config-next": "13.2.4",
-    "next": "13.2.4",
-    "react": "18.2.0",
-    "react-dom": "18.2.0"
-  }
+	"name": "futball-league",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@tanstack/react-table": "8.8.5",
+		"axios": "1.3.4",
+		"date-fns": "2.29.3",
+		"eslint": "8.37.0",
+		"eslint-config-next": "13.2.4",
+		"next": "13.2.4",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"react-icons": "4.8.0",
+		"styled-components": "5.3.9"
+	},
+	"devDependencies": {
+		"@types/node": "18.15.11",
+		"@types/react": "18.0.33",
+		"standard": "17.0.0",
+		"typescript": "5.0.3"
+	},
+	"eslintConfig": {
+		"extends": "./node_modules/standard/eslintrc.json"
+	}
 }
