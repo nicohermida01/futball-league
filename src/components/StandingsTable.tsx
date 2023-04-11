@@ -92,10 +92,12 @@ const columns = [
 				{props
 					.getValue()
 					.split(',')
-					.map(char => {
-						if (char === 'W') return <CheckIcon color={colors.SUCCESS} />
-						if (char === 'D') return <DashIcon color={colors.DRAW_GRAY} />
-						if (char === 'L') return <XIcon color={colors.WRONG} />
+					.map((char, index) => {
+						if (char === 'W')
+							return <CheckIcon color={colors.SUCCESS} key={index} />
+						if (char === 'D')
+							return <DashIcon color={colors.DRAW_GRAY} key={index} />
+						if (char === 'L') return <XIcon color={colors.WRONG} key={index} />
 					})}
 			</LastFiveWrapper>
 		),
