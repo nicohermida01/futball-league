@@ -52,6 +52,7 @@ export async function getServerSideProps() {
 }
 
 const HomeContainer = styled.div`
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: 20px;

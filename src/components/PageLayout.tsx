@@ -2,6 +2,7 @@ import styled from 'styled-components'
 
 import { colors } from '@/ssot/colors'
 import { Topbar } from './Topbar'
+import { constants } from '@/constants'
 
 export function PageLayout({ children }) {
 	return (
@@ -21,6 +22,10 @@ const AppContainer = styled.div`
 
 const ChildrenContainer = styled.main`
 	width: 100%;
+	margin: 0 auto;
+	max-width: ${constants.APP_MAXW}px;
 	min-height: calc(100vh - 62px);
 	padding: 20px;
+	display: grid;
+	place-items: center;
 `
