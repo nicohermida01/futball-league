@@ -10,29 +10,14 @@ import Image from 'next/image'
 import { colors } from '@/ssot/colors'
 import { getYear } from 'date-fns'
 import { CheckIcon } from './icons/CheckIcon'
-
-import type { ISeasonLeague } from '@/pages'
 import { DashIcon } from './icons/DashIcon'
 import { XIcon } from './icons/XIcon'
+import {
+	ICompetitionPosition,
+	ICompetitionSeason,
+} from '@/interfaces/competitionPage.interface'
 
-export type TPosition = {
-	position: number
-	team: {
-		crest: string
-		name: string
-	}
-	playedGames: number
-	won: number // partidos ganados
-	draw: number // partidos empatados
-	lost: number // partidos perdidos
-	points: number
-	goalsFor: number // goles a favor
-	goalsAgainst: number // goles en contra
-	goalDifference: number // diferencia de goles
-	form: string // ultimos 5 partidos => 'W,W,W,D,L' donde W=win, D=draw, L=lost
-}
-
-const columnHelper = createColumnHelper<TPosition>()
+const columnHelper = createColumnHelper<ICompetitionPosition>()
 
 const columns = [
 	columnHelper.accessor(row => row.team.name, {
@@ -105,8 +90,8 @@ const columns = [
 ]
 
 type TStandingsTableProps = {
-	data: TPosition[]
-	season: ISeasonLeague
+	data: ICompetitionPosition[]
+	season: ICompetitionSeason
 }
 
 export function StandingsTable({ data, season }: TStandingsTableProps) {
