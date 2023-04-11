@@ -31,6 +31,7 @@ interface IHomePageProps {
 export default function Home(props: IHomePageProps) {
 	return (
 		<HomeContainer>
+			hola ivan
 			<CompetitionHeader
 				competitonName={props.data.competition.name}
 				competitionImg={props.data.competition.emblem}
