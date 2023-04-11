@@ -142,10 +142,7 @@ export function StandingsTable({ data, season }: TStandingsTableProps) {
 					<StyledTbody>
 						{table.getRowModel().rows.map(row => {
 							return (
-								<StyledTr
-									key={row.id}
-									alt={parseInt(row.id) % 2 === 1 ? true : false}
-								>
+								<StyledTr key={row.id}>
 									{row.getVisibleCells().map(cell => (
 										<StyledTd key={cell.id}>
 											{flexRender(
@@ -226,8 +223,9 @@ const StyledTbody = styled.tbody`
 `
 
 const StyledTr = styled.tr`
-	background-color: ${props =>
-		props.alt === true ? colors.ROW_TABLE_ALT : 'transparent'};
+	&:nth-child(even) {
+		background-color: ${colors.ROW_TABLE_ALT};
+	}
 `
 
 const StyledTd = styled.td`
