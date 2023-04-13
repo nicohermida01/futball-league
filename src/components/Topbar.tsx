@@ -1,34 +1,32 @@
 import styled from 'styled-components'
+import Link from 'next/link'
 
-import { colors } from '@/ssot/colors'
-import { AppLogo } from './icons/AppLogo'
-import { MenuIcon } from './icons/MenuIcon'
-import { UserIcon } from './icons/UserIcon'
 import { constants } from '@/constants'
+import { AppLogo } from './icons/AppLogo'
 
-export function Topbar () {
-  return (
-    <HeaderWrapper>
-      <TopbarContainer>
-        <MenuIcon color='#fff' fontSize='24px' />
-        <AppLogo height={38} width={106} />
-        <UserIcon color='#fff' fontSize='24px' />
-      </TopbarContainer>
-    </HeaderWrapper>
-  )
+export function Topbar() {
+	return (
+		<HeaderWrapper>
+			<TopbarContainer>
+				<Link href='/'>
+					<AppLogo height={40} width={112} />
+				</Link>
+			</TopbarContainer>
+		</HeaderWrapper>
+	)
 }
 
 const HeaderWrapper = styled.div`
 	width: 100%;
-	background-color: ${colors.TOPBAR_BG};
+	background-color: #fff;
 `
 
 const TopbarContainer = styled.header`
 	width: 100%;
 	margin: 0 auto;
 	max-width: ${constants.APP_MAXW}px;
-	background-color: ${colors.TOPBAR_BG};
-	padding: 12px 20px;
+	background-color: #fff;
+	padding: 16px 32px;
 
 	display: flex;
 	align-items: center;

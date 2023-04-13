@@ -3,37 +3,32 @@ import styled from 'styled-components'
 
 import { colors } from '@/ssot/colors'
 
-export function CompetitionHeader({ competitonName, competitionImg }) {
+export function CompetitionHeader({ name, img, location }) {
 	return (
-		<CompetitionHeaderContainer>
+		<Container>
 			<ImageWrapper>
-				<Image
-					src={competitionImg}
-					alt={competitonName}
-					width={100}
-					height={100}
-				/>
+				<Image src={img} alt={name} width={100} height={100} />
 			</ImageWrapper>
 			<TitleContainer>
-				<TitleLabel>competición</TitleLabel>
-				<Title>{competitonName}</Title>
+				<Title>{name}</Title>
+				<TitleLabel>{location}</TitleLabel>
 			</TitleContainer>
-		</CompetitionHeaderContainer>
+		</Container>
 	)
 }
 
-const CompetitionHeaderContainer = styled.div`
+const Container = styled.div`
 	width: 100%;
 	display: flex;
 	align-items: center;
 	gap: 16px;
 `
 const ImageWrapper = styled.div`
-	width: 80px;
-	height: 80px;
+	width: 120px;
+	height: 120px;
 	background-color: #fff;
+	padding: 16px;
 	border-radius: 50%;
-	padding: 8px;
 
 	& img {
 		width: 100%;
@@ -45,12 +40,12 @@ const TitleContainer = styled.div`
 	text-transform: uppercase;
 `
 
-const Title = styled.h1`
-	font-size: 30px;
-	color: #fff;
+const Title = styled.h2`
+	font-size: 32px;
+	color: #000;
 `
 
 const TitleLabel = styled.h3`
 	font-size: 14px;
-	color: ${colors.TEXT_AUX_GRAY};
+	color: rgba(0, 0, 0, 0.4);
 `
