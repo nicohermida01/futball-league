@@ -4,13 +4,13 @@ import { colors } from '@/ssot/colors'
 import { Topbar } from './Topbar'
 import { constants } from '@/constants'
 
-export function PageLayout({ children }) {
-	return (
-		<AppContainer>
-			<Topbar />
-			<ChildrenContainer>{children}</ChildrenContainer>
-		</AppContainer>
-	)
+export function PageLayout ({ children }) {
+  return (
+    <AppContainer>
+      <Topbar />
+      <ChildrenContainer>{children}</ChildrenContainer>
+    </AppContainer>
+  )
 }
 
 const AppContainer = styled.div`

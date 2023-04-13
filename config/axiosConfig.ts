@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const axiosInstance = axios.create({
-	baseURL: 'https://api.football-data.org/v4',
+  baseURL: 'https://api.football-data.org/v4'
 })
 
 axiosInstance.defaults.headers['X-Auth-Token'] =

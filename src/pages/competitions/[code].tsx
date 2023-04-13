@@ -5,30 +5,30 @@ import { StandingsTable } from '@/components/StandingsTable'
 import { ICompetitionPageProps } from '@/interfaces/competitionPage.interface'
 import { getCompetition } from '@/services/footall_data'
 
-export default function Competition(props: ICompetitionPageProps) {
-	return (
-		<Container>
-			{props.competition && (
-				<CompetitionHeader
-					competitonName={props.competition.name}
-					competitionImg={props.competition.emblem}
-				/>
-			)}
+export default function Competition (props: ICompetitionPageProps) {
+  return (
+    <Container>
+      {props.competition && (
+        <CompetitionHeader
+          competitonName={props.competition.name}
+          competitionImg={props.competition.emblem}
+        />
+      )}
 
-			{props.standings && props.season && (
-				<StandingsTable data={props.standings[0].table} season={props.season} />
-			)}
-		</Container>
-	)
+      {props.standings && props.season && (
+        <StandingsTable data={props.standings[0].table} season={props.season} />
+      )}
+    </Container>
+  )
 }
 
-export async function getServerSideProps(context) {
-	let props: ICompetitionPageProps
+export async function getServerSideProps (context) {
+  let props: ICompetitionPageProps
 
-	const request = await getCompetition(context.params.code)
-	if (request) props = request
+  const request = await getCompetition(context.params.code)
+  if (request) props = request
 
-	return { props }
+  return { props }
 }
 
 const Container = styled.div`
