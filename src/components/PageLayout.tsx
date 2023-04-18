@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import Head from 'next/head'
 
 import { colors } from '@/ssot/colors'
 import { Topbar } from './Topbar'
@@ -6,6 +7,14 @@ import { Topbar } from './Topbar'
 export function PageLayout({ children }) {
 	return (
 		<AppContainer>
+			<Head>
+				<title>Futball League</title>
+				<meta
+					name='description'
+					content='futball league - The best app for football competitions'
+				/>
+				<link rel='icon' href='/favicon.ico' />
+			</Head>
 			<Topbar />
 			<ChildrenContainer>{children}</ChildrenContainer>
 		</AppContainer>
