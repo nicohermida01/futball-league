@@ -1,22 +1,42 @@
 import styled from 'styled-components'
 
 import { getAllCompetitions } from '@/services/footall_data'
+
 import { IHomePageProps } from '@/interfaces/homePage.interface'
+
 import { CompetitionCard } from '@/components/CompetitionCard'
+import { PageTitle } from '@/components/PageTitle'
+import { ContainerWithMaxWidth } from '@/components/ContainerWithMaxWidth'
+
+import { ContainerColumn } from '@/styles/components/ContainerColumn'
 
 export default function Home(props: IHomePageProps) {
 	return (
-		<Container>
-			{props.competitions.map(competition => (
-				<CompetitionCard
-					key={competition.id}
-					code={competition.code}
-					emblem={competition.emblem}
-					name={competition.name}
-					location={competition.area.name}
-				/>
-			))}
-		</Container>
+		<ContainerColumn>
+			<PageTitle title='competitions' />
+			<ContainerWithMaxWidth>
+				<GridContainer>
+					{props.competitions.map(competition => (
+						<CompetitionCard
+							key={competition.id}
+							code={competition.code}
+							imgSrc={competition.emblem}
+							name={competition.name}
+							location={competition.area.name}
+							type={competition.type}
+						/>
+					))}
+				</GridContainer>
+			</ContainerWithMaxWidth>
+
+			<PageTitle title='teams' />
+
+			<ContainerWithMaxWidth>Coming Soon ...</ContainerWithMaxWidth>
+
+			<PageTitle title='matches' />
+
+			<ContainerWithMaxWidth>Coming Soon ...</ContainerWithMaxWidth>
+		</ContainerColumn>
 	)
 }
 
@@ -31,7 +51,7 @@ export async function getServerSideProps() {
 	return { props }
 }
 
-const Container = styled.div`
+const GridContainer = styled.div`
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);

@@ -1,9 +1,10 @@
 export interface ICompetition {
-  id: number
-  code: string
-  emblem: string // competition image url
-  name: string
-  area: {
-    name: string // competition location
-  }
+	id: number
+	area: {
+		name: string // competition location
+	}
+	name: string
+	code: string
+	type: 'CUP' | 'LEAGUE'
+	emblem: string // competition image url
 }

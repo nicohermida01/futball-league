@@ -1,3 +1,3 @@
 export const constants = {
-  APP_MAXW: '1500'
+	APP_MAXW: '1300',
 }
