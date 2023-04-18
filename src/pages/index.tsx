@@ -29,10 +29,6 @@ export default function Home(props: IHomePageProps) {
 				</GridContainer>
 			</ContainerWithMaxWidth>
 
-			<PageTitle title='teams' />
-
-			<ContainerWithMaxWidth>Coming Soon ...</ContainerWithMaxWidth>
-
 			<PageTitle title='matches' />
 
 			<ContainerWithMaxWidth>Coming Soon ...</ContainerWithMaxWidth>

@@ -18,6 +18,18 @@ import { DashIcon } from './icons/DashIcon'
 import { XIcon } from './icons/XIcon'
 import { colors } from '@/ssot/colors'
 
+const columnsWidth = {
+	draw: '60px',
+	goalDifference: '60px',
+	goalsAgainst: '60px',
+	goalsFor: '60px',
+	lost: '60px',
+	playedGames: '60px',
+	points: '60px',
+	won: '60px',
+	form: '140px',
+}
+
 const columnHelper = createColumnHelper<ICompetitionTableRow>()
 
 interface ICompetitionTableProps {
@@ -121,16 +133,18 @@ export function CompetitionTable({ data, title }: ICompetitionTableProps) {
 				<StyledThead>
 					{table.getHeaderGroups().map(headerGroup => (
 						<tr key={headerGroup.id}>
-							{headerGroup.headers.map(header => (
-								<StyledTh key={header.id}>
-									{header.isPlaceholder
-										? null
-										: flexRender(
-												header.column.columnDef.header,
-												header.getContext()
-										  )}
-								</StyledTh>
-							))}
+							{headerGroup.headers.map(header => {
+								return (
+									<StyledTh key={header.id} headerId={header.id}>
+										{header.isPlaceholder
+											? null
+											: flexRender(
+													header.column.columnDef.header,
+													header.getContext()
+											  )}
+									</StyledTh>
+								)
+							})}
 						</tr>
 					))}
 				</StyledThead>
@@ -178,6 +192,7 @@ const StyledThead = styled.thead`
 const StyledTh = styled.th`
 	text-align: start;
 	padding: 8px 16px;
+	width: ${props => columnsWidth[props.headerId] || 'inherit'};
 `
 
 const StyledTbody = styled.tbody`
